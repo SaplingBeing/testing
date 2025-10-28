@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function printReversedTriangle(rows) {
+  for (let i = rows; i >= 1; i--) { // Outer loop for rows, iterating downwards
+    let rowPattern = '';
+    for (let j = 1; j <= i; j++) { // Inner loop for characters in each row
+      rowPattern += '*';
+    }
+    console.log(rowPattern);
+  }
+}
+
+// Example usage:
+printReversedTriangle(5);
+    </script>
+</body>
+</html>

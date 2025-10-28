@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>JavaScript Examples</title>
+
+    <style>
+        body {
+            font-size: larger;
+        }
+
+        #articleResult {
+            width: 90%;
+            border-style: solid;
+            border-width: thin;
+            padding: 10px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        
+        function CheckPalindrome() {
+            var word = document.getElementById("palindrome").value.trim();
+            var palWord = word.split("").reverse().join("");
+            if(word === palWord){
+                document.getElementById("PalindromeResult").innerHTML=(word + " is palindrome");
+            }
+            else{
+                document.getElementById("PalindromeResult").innerHTML=(word +" is not a palindrome");
+            }
+        }
+
+        function Sorting() {
+            var number = document.getElementById("numbers").value.trim();
+            var sort = number.split(", ").sort();
+            alert(sort);
+
+        }
+
+        function CalcArea() {
+            var base = Number(document.getElementById("base").value);
+            var height = Number(document.getElementById("height").value);
+            var area = base * height;
+            alert("Area of triangle is: "+area);
+
+        }
+        function DisplayDesc(){
+            var temperature = Number(document.getElementById("temperature").value)
+            if(temperature>=5 && temperature<=10){
+                alert("Temperature is cold");
+            }
+            else if(temperature>=11 && temperature<=16){
+                alert("Mild");
+            }
+            else if(temperature>=17 && temperature<=22){
+                alert("Hot");
+            }
+            else if(temperature>22){
+                alert("Extremely Hot");
+            }
+            else{
+                alert("ERROR");
+            }
+        }
+        function Work(){
+            var char = document.getElementById("char").value.trim();
+            var sentence = document.getElementById("sentence").value.trim();
+            let count = 0;
+            var sentenceArray = sentence.split("");
+            for(let i = 0; i < sentenceArray.length; i++){
+                if (char == sentenceArray[i]){
+                    count++;
+                }
+            }
+            alert(count);
+        }   
+        function process(){
+            var num = document.getElementById("factorial").value.trim();
+            let res = 1;
+            for(let j = 1; j <= num; j++){ 
+                res *= j;
+            }
+            alert(res)
+        }
+        function abg(){
+            var n = document.getElementById("n").value.trim();
+            // Num of rows
+            for(let k = 1; k <= n; k++){
+                // num of col
+                for(let p = 1; p <= k; p++){
+                    document.write(p+" ");
+                }
+                document.write("<br>");
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Calculator</h1>
+
+    <div id="articleResult">
+        <fieldset>
+            <legend>Check palindrome :</legend>
+            <label for="palindrome">Enter a word:</label>
+            <input type="text" id="palindrome" name="palindrome" size="70"><br><br>
+            <input type="button" value="Check palindrome" onclick="CheckPalindrome();"></button>
+            <br /><br />Answer<br />
+            <p id="PalindromeResult"></p>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Sorting comma-separated numbers</legend>
+            <label for="Radius">Numbers:</label>
+            <input type="text" id="numbers" name="numbers"><br><br>
+            <input type="button" value="Sort three numbers" onclick="Sorting();"></button>
+            <br /><br />Answer<br />
+            <p id="SortResult"></p>
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Calculate triangle area:</legend>
+            <label for="base">Base :</label>
+            <input type="text" id="base" name="base"><br><br>
+            <label for="height">Height :</label>
+            <input type="text" id="height" name="height"><br><br>
+            <input type="button" value="Calculate Area" onclick="CalcArea();"></button>
+            <br /><br />Answer<br />
+            <p id="AreaResult"></p>
+        </fieldset>
+        <br />
+    </div>
+    <input type="number" id="temperature" min="0">
+    <button onclick="DisplayDesc()">Answer</button>
+    <br>
+    <input type="text" id="char" placeholder="char" maxlength="1">
+    <input type="text" id="sentence" placeholder="sentence">
+    <button onclick="Work()">Answer</button>
+    <br>
+    <input type="number" id="factorial" placeholder="factorial input">
+    <button onclick="process()">Answer</button>
+    <input type="number" id="n" placeholder="number">
+    <button onclick="abg()">Answer</button>
+</body>
+
+</html>
